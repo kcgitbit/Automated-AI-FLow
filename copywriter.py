@@ -1,5 +1,19 @@
 from openai import OpenAI
-from core.config import OPENAI_API_KEY
+import os
+import json
+
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
+#client = None
+
+if OPENAI_API_KEY:
+    client = OpenAI(api_key=OPENAI_API_KEY)
+else:
+    print("OPENAI_API_KEY is not set, GPT disabled")
+
+
+
+
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
