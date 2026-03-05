@@ -13,10 +13,6 @@ else:
 
 
 
-
-
-client = OpenAI(api_key=OPENAI_API_KEY)
-
 def generate_marketing_copy(product):
 
     prompt = f"""
